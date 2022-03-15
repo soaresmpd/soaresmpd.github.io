@@ -1,15 +1,21 @@
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js">
-</script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js">
-</script>
+<!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
 
-<body style='margin: 0px; overflow: hidden;'>
-<a-scene embedded arjs='sourceType: webcam;'>
-    <a-marker preset='custom' type='pattern' url='pattern-qrcode_tellus.patt'>
-        <a-entity obj-model="obj: url(model.obj); 
-                             mtl: url(model.mtl)">
-        </a-entity>
-    </a-marker>
-    <a-entity camera></a-entity>
-</a-scene>
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs>
+    <!-- create your content here. just a box for now -->
+    <a-assets>
+      <img id="image"
+        src="https://lh3.googleusercontent.com/5uEQPUr5NJq7oF9aKWlzTLCHlg_pT3U67wo5YW4w5k0Swf4oGBll0Iehx1EChd79Nu2HIzFZpAkVFHWes6Ux2l8Xl-ONZa38Yv7lcPM3mAXfMhb_3Mq9lP1zXf7yBv9hpdhMKlEgR1-EWAud4B-RtT9b0hY2qHebNkxNs1Dye0CW59jdhphKQ1ZOBiJeSrXU8u8b4Pq0KO7g1HqOXvakiHiaNlHXSDrXBuhK96HB-Ik5kcJJg6N8hx20s6mZ33AXesSxT--OUMsngTHUpAh_uzf4UWmND5ASz0PKv25N3I8EvLcySbr7_M8denk9raOE6pRKKlxSMhVlNwj2HhGZ2D71Qz2lj3NsreNKLkCKywI9IV9iPizv5wr6FS1hY4KXGMc_PpWQoyjrKy6ZwRGbeOics6db3mU2NXnGXKUbeKJk4iz2SFGBAxdgOCfV0pX4hdsGhZSUoMll4CUd2r0sPhmTL5hx9LvAeGFzvRNmpdINtBsR9IoGK3z9K9WMXd9qGwvpv8DgJ_JrtVOaYN8x1lXV15JVkMoi8fG0OU6AN3Vk-4_zlKKHKCfDJyFwmzpI1mUHQirNtp-pBgj3rgTWZnFcdzASV7xPu9QRWOvy0sFgaQhopAy87gOqU4Yv4g9OazTeIpv8zMjRQXwQoQ0zpMsHMuDBMAjGcWijqejxjVZM1tyUjKoD5OLHZMed1zk9ohyLNy5xpj26m86vGgVg2MS0zQ=w661-h227-no?authuser=0"
+        crossorigin="anonymous">
+    </a-assets>
+    <!-- <a-entity geometry="primitive:box; width: 2; height: 2; depth: 2" material="shader:video;src:url(sindcast.mp4);autoplay:""></a-entity> -->
+    <a-image src="#image" width="2" height="2" position="0 1 -1"></a-image>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
+
 </body>
