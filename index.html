@@ -10,7 +10,7 @@
         <a-scene embedded arjs>
         <a-marker preset="hiro">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-            <a-entity geometry="primitive:box; width: 2; height: 2; depth: 2" material="src:url(sindcast.mp4);"></a-entity>
+            <a-entity geometry="primitive:box; width: 2; height: 2; depth: 2" material="webkit-playsinline;playsinline;src:url(sindcast.mp4);"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
         </a-scene>
