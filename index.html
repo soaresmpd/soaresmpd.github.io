@@ -1,23 +1,15 @@
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs='sourceType: webcam;'>
-    <!-- handle marker with your own pattern -->
-    <a-marker type='pattern' url='pattern-frame.patt'>
-      <a-box position='0 0.5 0' material='color: red;'></a-box>
-    </a-marker>
-
-    <!-- handle marker with hiro preset -->
-    <a-marker preset='hiro'>
-      <a-entity geometry="primitive:box; width: 2; height: 2; depth: 2" material="shader:video;src:url(sindcast.mp4);"></a-entity>
-    </a-marker>
-
-    <!-- handle barcode marker -->
-    <a-marker preset='kanji' value='5'>
-      <a-box position='0 0.5 0' material='color: blue;'></a-box>
-    </a-marker>
-
-    <!-- add a simple camera -->
-    <a-entity camera></a-entity>
-  </a-scene>
-</body>
+<!DOCTYPE html>
+<html>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+            <a-video src="sindcast.mp4"></a-video>
+        </a-marker>
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
