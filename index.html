@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
 <html>
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
@@ -7,7 +10,7 @@
         <a-scene embedded arjs>
         <a-marker preset="hiro">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-            <a-video src="sindcast.mp4"></a-video>
+            <a-entity geometry="primitive:box; width: 2; height: 2; depth: 2" material="shader:video;src:url(sindcast.mp4);"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
         </a-scene>
