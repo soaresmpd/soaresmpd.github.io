@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+
 <head>
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <html>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
-    <body style="margin : 0px; overflow: hidden;">
-        <a-scene embedded arjs>
-        <a-marker preset="hiro">
-            <a-entity geometry="primitive:box; width: 2; height: 2; depth: 2" material="shader:video;src:url(sindcast.mp4);"></a-entity>
-        </a-marker>
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
+
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene embedded arjs>
+    <a-entity geometry="primitive:box; width: 2; height: 2; depth: 2" material="shader:video;src:url(sindcast.mp4);">
+    </a-entity>
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
+</body>
+
 </html>
