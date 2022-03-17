@@ -34,7 +34,7 @@
       setTimeout(() => ctrl.abort(), 5000);
 
       try {
-        let r = await fetch('/',
+        let r = await fetch('/image',
           { method: "POST", body: formData, signal: ctrl.signal });
         console.log('HTTP response code:', r.status);
       } catch (e) {
